@@ -33,7 +33,7 @@ export default function LeadScorerInputForm() {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await fetch('http://localhost:3001/api/score-leads', {
+      const res = await fetch('https://neuropitch-api-clean.onrender.com/api/score-leads', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ leads: [lead] })
