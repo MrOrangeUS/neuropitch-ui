@@ -1,4 +1,4 @@
-// LeadScorerInputForm.jsx (Enhanced Version)
+// LeadScorerInputForm.jsx (Improved Spacing & Layout)
 import React, { useState } from 'react';
 
 export default function LeadScorerInputForm() {
@@ -48,27 +48,33 @@ export default function LeadScorerInputForm() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-6">
-      <h1 className="text-4xl font-bold mb-8">Lead Scorer</h1>
+    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center px-4 py-10">
+      <h1 className="text-4xl font-bold mb-10">Lead Scorer</h1>
 
-      <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-4 max-w-xl">
+      <form
+        onSubmit={handleSubmit}
+        className="w-full max-w-2xl bg-gray-800 p-8 rounded-lg shadow-lg border border-gray-700 space-y-6"
+      >
         {Object.entries(lead).map(([key, value]) => (
-          <div key={key} className="flex flex-col">
-            <label className="text-sm mb-1 text-gray-300 capitalize">{key}</label>
+          <div key={key} className="flex flex-col gap-2">
+            <label className="text-sm font-semibold text-gray-300 uppercase tracking-wide">
+              {key}
+            </label>
             <input
               name={key}
               value={value}
               onChange={handleChange}
               placeholder={`Enter ${key}`}
-              className="p-2 rounded bg-gray-800 border border-gray-700"
+              className="p-3 rounded-md bg-gray-900 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-cyan-500"
               required
             />
           </div>
         ))}
-        <div className="flex gap-4">
+
+        <div className="flex justify-between items-center pt-2">
           <button
             type="submit"
-            className="bg-white text-black px-4 py-2 font-semibold rounded hover:bg-gray-300"
+            className="bg-white text-black px-6 py-2 font-semibold rounded hover:bg-gray-300"
           >
             {loading ? 'Scoring...' : 'Score Lead'}
           </button>
@@ -76,7 +82,7 @@ export default function LeadScorerInputForm() {
             <button
               type="button"
               onClick={handleReset}
-              className="bg-gray-700 text-white px-4 py-2 font-semibold rounded hover:bg-gray-600"
+              className="bg-gray-600 text-white px-6 py-2 font-semibold rounded hover:bg-gray-500"
             >
               Reset
             </button>
@@ -85,8 +91,8 @@ export default function LeadScorerInputForm() {
       </form>
 
       {result && (
-        <div className="mt-10 p-6 bg-gray-800 rounded shadow border border-gray-700 max-w-xl">
-          <p className="text-xl font-bold mb-1">
+        <div className="mt-10 w-full max-w-2xl p-6 bg-gray-800 rounded-lg shadow-lg border border-gray-700">
+          <p className="text-xl font-bold mb-2">
             {result.name}{' '}
             <span className="text-gray-400">
               ({result.title} at {result.company})
