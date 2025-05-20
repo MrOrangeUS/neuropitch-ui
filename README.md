@@ -1,14 +1,85 @@
-# React + Vite
+# NeuroPitch AI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modular SaaS platform for AI-powered sales enablement.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🎯 **SmartLead Scorer** – AI-powered lead scoring with detailed analysis
+- 🎤 **VoiceBuddy Copilot** – AI voice assistant for sales calls (Coming Soon)
+- 💬 **LeadFlow Chatbot** – Intelligent lead qualification chatbot (Coming Soon)
+- 🛡️ **CallGuard Compliance** – Real-time compliance monitoring (Coming Soon)
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-"# neuropitch.ai" 
-"# neuropitch.ai" 
+- Frontend: Vite + React + TailwindCSS
+- Backend: Node.js + Express
+- AI: OpenAI GPT-4
+- Deployment: Vercel (frontend) + Render (backend)
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- OpenAI API key
+
+### Environment Setup
+
+1. Create `.env` file in the root directory for frontend:
+```
+VITE_API_URL=http://localhost:3000
+```
+
+2. Create `.env` file in the server directory:
+```
+PORT=3000
+OPENAI_API_KEY=your_openai_api_key_here
+```
+
+### Installation
+
+1. Install frontend dependencies:
+```bash
+npm install
+```
+
+2. Install backend dependencies:
+```bash
+cd server
+npm install
+```
+
+### Development
+
+1. Start the backend server:
+```bash
+cd server
+npm run dev
+```
+
+2. Start the frontend development server:
+```bash
+npm run dev
+```
+
+The application will be available at `http://localhost:5173`
+
+## Deployment
+
+### Frontend (Vercel)
+
+1. Push your code to GitHub
+2. Import the repository in Vercel
+3. Set the environment variables
+4. Deploy
+
+### Backend (Render)
+
+1. Create a new Web Service in Render
+2. Connect your repository
+3. Set the environment variables
+4. Deploy
+
+## License
+
+MIT
